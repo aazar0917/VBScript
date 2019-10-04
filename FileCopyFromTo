@@ -1,0 +1,11 @@
+'Push File from one directory to another.
+Dim objFSO
+set objFSO = createobject("Scripting.FileSystemObject")
+
+objFSO.copyfile "C:\Tables\MAM_BOARD\AFVV.TXT", "\\pollux\cmp_business_analysis\MAM_BOARD\LATESTDATA\AFVV.TXT"
+objFSO.copyfile "C:\Tables\MAM_BOARD\AFVC.TXT", "\\pollux\cmp_business_analysis\MAM_BOARD\LATESTDATA\AFVC.TXT"
+objFSO.copyfile "C:\Tables\MAM_BOARD\JEST_ORDERS.TXT", "\\pollux\cmp_business_analysis\MAM_BOARD\LATESTDATA\JEST_ORDERS.TXT"
+objFSO.copyfile "C:\Tables\MAM_BOARD\JEST_OPERATIONS.TXT", "\\pollux\cmp_business_analysis\MAM_BOARD\LATESTDATA\JEST_OPERATIONS.TXT"
+
+set objFSO = nothing
+MsgBox "Load Files Pushed to Network Share", VBOKCancel
