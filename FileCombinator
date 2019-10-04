@@ -1,0 +1,24 @@
+' Combines two text files
+Dim strInputPath1, strInputPath2, strInputPath3, strInputPath4,  strInputPath5, strInputPath6, strInputPath7, strInputPath8,  strInputPath9, strInputPath10, strInputPath11, strInputPath12,  strInputPath13, strInputPath14, strInputPath15, strInputPath16, strInputPath17, strOutputPath
+Dim txsInput1, txsInput2, txsInput3, txsInput4,  txsInput5, txsInput6, txsInput7, txsInput8,  txsInput9, txsInput10,  txsInput11, txsInput12, txsInput13, txsInput14, txsInput15, txsInput16, txsInput17, txsOutput
+Dim FSO
+
+Set FSO = CreateObject("Scripting.FileSystemObject")
+
+strInputPath1 = "C:\Users\202493\Desktop\0000_Txt_File_Combinator\File0.txt"
+strInputPath2 = "C:\Users\202493\Desktop\0000_Txt_File_Combinator\File1.txt"
+
+strOutputPath = "C:\Users\202493\Desktop\0000_Txt_File_Combinator\FILE_ALL.txt" 
+
+Set txsInput1 = FSO.OpenTextFile(strInputPath1, 1)
+Set txsInput2 = FSO.OpenTextFile(strInputPath2, 1)
+
+Set txsOutput = FSO.CreateTextFile(strOutputPath)
+
+txsOutput.Write txsInput1.ReadAll
+txsOutput.Write txsInput2.ReadAll
+
+txsInput1.Close
+txsInput2.Close
+
+txsOutput.Close
